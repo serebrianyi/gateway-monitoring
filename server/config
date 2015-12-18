@@ -1,0 +1,23 @@
+{ :gateway-id
+    { :command "grep \"INFO: gateway MAC address is configured to\" /var/log/syslog | tail -1"
+		  :regex #"INFO: gateway MAC address is configured to (.*)" }
+  :online-since
+    { :command "grep \"Poly Packet Forwarder for Lora Gateway\" /var/log/syslog | tail -1"
+		  :regex #"^(.*?) ttn-gateway"
+      :format "MMM D HH:mm:ss"}
+  :packet-forwarder-version
+    { :command "awk \"/Poly Packet Forwarder for Lora Gateway/,/Lora concentrator HAL library version info/\" /var/log/syslog | tail -2 | head -1"
+		  :regex #": Version: (.*)"
+      :release-url "https://api.github.com/repos/Lora-net/packet_forwarder/releases/latest"
+      :format "v%s"}
+  :hal-library-version
+    { :command "awk \"/HAL library version info/,/Options/\" /var/log/syslog | tail -1"
+		  :regex #": Version: (.*?);"
+      :release-url "https://api.github.com/repos/Lora-net/lora_gateway/releases/latest"
+      :format "v%s"}
+  :mail
+    {:host "debugmail.io"
+     :port 25
+     :tls {:rejectUnauthorized false}
+     :auth {:user "test@gmail.com" :pass "111110"}}}
+

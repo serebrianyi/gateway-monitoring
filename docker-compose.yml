@@ -1,0 +1,4 @@
+gateway-monitoring:
+  build: .
+  ports:
+    - "49162:3000"
