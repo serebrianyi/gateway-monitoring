@@ -1,1 +1,1 @@
-# gateway_monitoring
+# gateway-monitoring
