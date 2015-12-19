@@ -1,0 +1,39 @@
+.table-column-header {
+  width: 25%;
+}
+
+.table-column-header-label {
+  width: 95%;
+  display: inline-block;
+}
+
+.table-column-header-visible {
+  width: 100%;
+}
+
+.table-column-header-invisible {
+  width: 100%;
+  display: none;
+}
+
+.general-info-cell {
+  width: 33.3%;
+  display: inline-block;
+  text-align: center;
+}
+
+#app-state-dump-textarea {
+  height: 200px;
+}
+
+.system-management-invisible-version-button {
+  display: none;
+}
+
+.system-management-visible-version-button {
+  margin-left: 10px;
+}
+
+.tab-button {
+  margin:5px;
+}
